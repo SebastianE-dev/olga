@@ -1,11 +1,27 @@
-// import { graphql,useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
+const usePage = () => {
+  const data = useStaticQuery(graphql`
+    {
+      page: wordpressPage(title: { eq: "Home" }) {
+        hero: childWordPressAcfHero {
+          title: page_title
+          image {
+            alt_text
+            localFile {
+              id
+              sharp: childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
 
-// const usePage = () => {
-//     const data = useStaticQuery(graphql`
+  return [{ ...data.page.hero, sectionName: "hero" }];
+};
 
-//     `)
-
-//     return data
-// }
-
-// export default usePage;
+export default usePage;

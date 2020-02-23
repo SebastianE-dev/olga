@@ -1,3 +1,10 @@
-import React from "react"
+import React from "react";
+import { usePage } from "../hooks";
 
-export default () => <div>Hello world!</div>
+const Index = () => {
+  const data = usePage();
+  console.log(data);
+  return <div></div>;
+};
+
+export default Index;
