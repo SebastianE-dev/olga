@@ -4,6 +4,7 @@ const usePage = () => {
     {
       page: wordpressPage(title: { eq: "Home" }) {
         hero: childWordPressAcfHero {
+          color
           title: page_title
           image {
             alt_text
