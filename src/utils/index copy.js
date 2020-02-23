@@ -1,5 +1,0 @@
-export { default as breakpoints } from "./breakpoints"
-export { default as fontSize } from "./font-sizes"
-export { default as padding } from "./padding"
-export { default as fontWeight } from "./font-weight"
-export { default as grid } from "./grid"
