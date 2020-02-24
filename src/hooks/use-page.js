@@ -54,6 +54,14 @@ const usePage = () => {
             }
           }
         }
+        extraFeatures: childWordPressAcfExtraFeatures {
+          id
+          title
+          feature {
+            description
+            title
+          }
+        }
       }
     }
   `);
@@ -62,6 +70,7 @@ const usePage = () => {
     { ...data.page.hero, sectionName: "hero" },
     { ...data.page.features, sectionName: "faetures" },
     { ...data.page.extraInfo, sectionName: "extra" },
+    { ...data.page.extraFeatures, sectionName: "extraFeatures" },
   ];
 };
 

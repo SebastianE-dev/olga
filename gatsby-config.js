@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `/olga`,
   plugins: [
     {
       resolve: `gatsby-plugin-typography`,
