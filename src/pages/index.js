@@ -5,6 +5,7 @@ import {
   FeaturesSection,
   ExtraSection,
   ExtraFeatures,
+  Qa,
 } from "../components";
 
 const Index = () => {
@@ -22,6 +23,8 @@ const Index = () => {
             return <ExtraSection {...section} key={section.id} />;
           case "extraFeatures":
             return <ExtraFeatures {...section} key={section.id} />;
+          case "qna":
+            return <Qa {...section} key={section.id} />;
           default:
             return <p key="error">upps</p>;
         }

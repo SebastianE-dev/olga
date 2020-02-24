@@ -62,6 +62,11 @@ const usePage = () => {
             title
           }
         }
+        question: childWordPressAcfQa {
+          id
+          color
+          title
+        }
       }
     }
   `);
@@ -71,6 +76,7 @@ const usePage = () => {
     { ...data.page.features, sectionName: "faetures" },
     { ...data.page.extraInfo, sectionName: "extra" },
     { ...data.page.extraFeatures, sectionName: "extraFeatures" },
+    { ...data.page.question, sectionName: "qna" },
   ];
 };
 
