@@ -18,11 +18,32 @@ const usePage = () => {
             }
           }
         }
+        features: childWordPressAcfFeatures {
+          id
+          feature {
+            title
+            description
+            icon {
+              alt_text
+              id
+              localFile {
+                sharp: childImageSharp {
+                  fluid {
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   `);
 
-  return [{ ...data.page.hero, sectionName: "hero" }];
+  return [
+    { ...data.page.hero, sectionName: "hero" },
+    { ...data.page.features, sectionName: "faetures" },
+  ];
 };
 
 export default usePage;
