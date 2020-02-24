@@ -1,6 +1,6 @@
 import React from "react";
 import { usePage } from "../hooks";
-import { HeroSection, FeaturesSection } from "../components";
+import { HeroSection, FeaturesSection, ExtraSection } from "../components";
 
 const Index = () => {
   const data = usePage();
@@ -13,6 +13,8 @@ const Index = () => {
             return <HeroSection {...section} key={section.id} />;
           case "faetures":
             return <FeaturesSection {...section} key={section.id} />;
+          case "extra":
+            return <ExtraSection {...section} key={section.id} />;
           default:
             return <p>upps</p>;
         }

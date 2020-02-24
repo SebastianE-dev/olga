@@ -36,6 +36,24 @@ const usePage = () => {
             }
           }
         }
+        extraInfo: childWordPressAcfExtraInfo {
+          id
+          color
+          title
+          paragraphs {
+            paragraph
+          }
+          image {
+            alt_text
+            localFile {
+              sharp: childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+          }
+        }
       }
     }
   `);
@@ -43,6 +61,7 @@ const usePage = () => {
   return [
     { ...data.page.hero, sectionName: "hero" },
     { ...data.page.features, sectionName: "faetures" },
+    { ...data.page.extraInfo, sectionName: "extra" },
   ];
 };
 
