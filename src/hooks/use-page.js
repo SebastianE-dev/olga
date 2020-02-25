@@ -67,6 +67,60 @@ const usePage = () => {
           color
           title
         }
+        testimonials: childWordPressAcfTestimonials {
+          color
+          id
+          title
+          testimonial {
+            description
+            name
+            images {
+              image {
+                alt_text
+                localFile {
+                  sharp: childImageSharp {
+                    fluid {
+                      ...GatsbyImageSharpFluid_withWebp
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        clients: childWordPressAcfClients {
+          title
+          id
+          company {
+            logo {
+              id
+              alt_text
+              localFile {
+                sharp: childImageSharp {
+                  fluid {
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        packs: childWordPressAcfPacks {
+          color
+          title
+          id
+          pack {
+            title
+            price
+            service {
+              title
+              description {
+                text
+              }
+            }
+          }
+        }
       }
     }
   `);
@@ -77,6 +131,9 @@ const usePage = () => {
     { ...data.page.extraInfo, sectionName: "extra" },
     { ...data.page.extraFeatures, sectionName: "extraFeatures" },
     { ...data.page.question, sectionName: "qna" },
+    { ...data.page.testimonials, sectionName: "testimonials" },
+    { ...data.page.clients, sectionName: "clients" },
+    { ...data.page.packs, sectionName: "packs" },
   ];
 };
 

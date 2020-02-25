@@ -6,6 +6,9 @@ import {
   ExtraSection,
   ExtraFeatures,
   Qa,
+  Testimonials,
+  ClientsSection,
+  PacksSection,
 } from "../components";
 
 const Index = () => {
@@ -25,6 +28,12 @@ const Index = () => {
             return <ExtraFeatures {...section} key={section.id} />;
           case "qna":
             return <Qa {...section} key={section.id} />;
+          case "testimonials":
+            return <Testimonials {...section} key={section.id} />;
+          case "clients":
+            return <ClientsSection {...section} key={section.id} />;
+          case "packs":
+            return <PacksSection {...section} key={section.id} />;
           default:
             return <p key="error">upps</p>;
         }

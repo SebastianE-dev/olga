@@ -1,4 +1,4 @@
-import Typography from "typography"
+import Typography from "typography";
 
 const typography = new Typography({
   baseFontSize: "18px",
@@ -7,17 +7,21 @@ const typography = new Typography({
   padding: 0,
   googleFonts: [
     {
-      name: "Dosis",
-      styles: ["400", "500", "600"],
+      name: "Neuton",
+      styles: ["300", "400", "700", "800"],
+    },
+    {
+      name: "Open Sans",
+      styles: ["400"],
     },
   ],
-  headerFontFamily: ["Dosis"],
-  bodyFontFamily: ["Dosis"],
+  headerFontFamily: ["Neuton"],
+  bodyFontFamily: ["Open Sans"],
   // overrideStyles: ({ adjustFontSizeTo, rhythm }, options, styles) => ({
   //   "h1,h2": {
   //     color: colors.deepDarkGrey,
   //   },
   // }),
-})
+});
 
-export default typography
+export default typography;

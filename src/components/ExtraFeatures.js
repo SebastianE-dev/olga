@@ -90,7 +90,7 @@ const ExtraFeatures = ({ title, feature }) => {
         </div>
         <div className="features">
           {feature.map((item, index) => (
-            <div className="text">
+            <div className="text" key={`extra${index}`}>
               <div className="num">
                 <h5>{index + 1}</h5>
               </div>
