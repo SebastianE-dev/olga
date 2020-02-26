@@ -1,9 +1,7 @@
 import React from "react";
 import { css, Global } from "@emotion/core";
-import styled from "@emotion/styled";
-const Main = styled.main`
-  padding-top: 80px;
-`;
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 
 const Layout = ({ children }) => {
   return (
@@ -17,9 +15,9 @@ const Layout = ({ children }) => {
           }
         `}
       />
-      {/* navbar */}
-      <Main>{children}</Main>
-      {/* footer */}
+      <NavBar />
+      <main>{children}</main>
+      <Footer />
     </>
   );
 };

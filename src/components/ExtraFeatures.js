@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { grid, breakpoints, fontWeight, fontSize } from "../utils";
+import { grid, breakpoints, fontSize } from "../utils";
 
 const Section = styled.section`
   ${grid}
@@ -9,7 +9,7 @@ const Section = styled.section`
 const Content = styled.div`
   grid-area: content;
   display: grid;
-  grid-template-rows: 3rem min-content 3rem min-content 3rem;
+  grid-template-rows: 4rem min-content 3rem min-content 4rem;
   grid-template-areas:
     "."
     "header"

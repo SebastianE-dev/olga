@@ -2,7 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import Img from "gatsby-image";
 import { css } from "@emotion/core";
-import { grid, fontSize, breakpoints } from "../utils";
+import { grid, breakpoints } from "../utils";
 
 const bgColor = props => css`
   background-color: ${props.bgColor};
@@ -16,7 +16,7 @@ const Section = styled.section`
 const Content = styled.div`
   grid-area: content;
   display: grid;
-  grid-template-rows: 3rem min-content 2rem min-content 3rem;
+  grid-template-rows: 4rem min-content 2rem min-content 4rem;
   grid-template-areas:
     "."
     "header"
@@ -24,7 +24,7 @@ const Content = styled.div`
     "logos"
     ".";
 
-  > h1 {
+  > h2 {
     grid-area: header;
   }
 
@@ -49,7 +49,7 @@ const ClientsSection = ({ title, company }) => {
   return (
     <Section>
       <Content>
-        <h1>{title}</h1>
+        <h2>{title}</h2>
         <div className="logos">
           {company.map(logo => (
             <div className="img" key={logo.logo.id}>

@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "olga",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "one page website",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -18,7 +18,6 @@
     "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.27",
     "gatsby": "^2.19.7",
-    "gatsby-background-image": "^0.10.2",
     "gatsby-image": "^2.2.41",
     "gatsby-plugin-emotion": "^4.1.22",
     "gatsby-plugin-layout": "^1.1.22",
@@ -30,9 +29,9 @@
     "gh-pages": "^2.2.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-icons": "^3.9.0",
     "react-typography": "^0.16.19",
-    "typography": "^0.16.19",
-    "uuid": "^7.0.0"
+    "typography": "^0.16.19"
   },
   "devDependencies": {
     "prettier": "^1.19.1"

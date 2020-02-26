@@ -26,7 +26,7 @@ const Feature = ({ title, description, icon }) => (
       <StyledImg alt={icon.alt_text} fluid={icon.localFile.sharp.fluid} />
     </div>
     <div className="text">
-      <h2>{title}</h2>
+      <h3>{title}</h3>
       <p>{description}</p>
     </div>
   </div>
@@ -40,7 +40,7 @@ const Content = styled.div`
   grid-area: content;
 
   display: grid;
-  grid-template-rows: 3rem 1fr 3rem;
+  grid-template-rows: 4rem 1fr 4rem;
   grid-template-areas:
     "."
     "features"

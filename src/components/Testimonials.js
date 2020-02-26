@@ -21,7 +21,7 @@ const Content = styled.div`
   grid-area: content;
 
   display: grid;
-  grid-template-rows: 3rem min-content 3rem min-content 3rem;
+  grid-template-rows: 4rem min-content 3rem min-content 4rem;
   grid-template-areas:
     "."
     "header"
@@ -31,6 +31,8 @@ const Content = styled.div`
 
   > h2 {
     grid-area: header;
+    text-align: center;
+    font-size: ${fontSize.h1};
   }
   > div.testimonial {
     grid-area: testimonial;
@@ -48,6 +50,7 @@ const Content = styled.div`
       > div.text {
         display: grid;
         grid-row-gap: 1rem;
+        font-size: ${fontSize.h5};
       }
     }
     @media (${breakpoints.lg.min}) and (${breakpoints.lg.max}) {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { grid, fontSize, breakpoints } from "../utils";
-import uuid from "uuid/v4";
+import { FaQuestionCircle, FaCheck, FaRegWindowClose } from "react-icons/fa";
 
 import { css } from "@emotion/core";
 const bgColor = props => css`
@@ -50,19 +50,30 @@ const Content = styled.div`
     > div.pack {
       background-color: white;
       display: grid;
+      border-radius: 10px;
       grid-template-columns: 1rem 1fr 1rem;
-      grid-template-rows: 2rem min-content 2rem min-content 2rem;
+      grid-template-rows: 2rem min-content 2rem min-content 2rem min-content 2rem;
       grid-template-areas:
         ". . ."
         ". text ."
         ". . ."
         ". services ."
+        ". . ."
+        ". btn ."
         ". . .";
 
       > div.text {
         grid-area: text;
         display: flex;
         justify-content: space-between;
+        > .price {
+          color: #f46445;
+          font-weight: 400;
+        }
+        > h3 {
+          font-size: ${fontSize.h1};
+          font-weight: 400;
+        }
       }
       > div.services {
         grid-area: services;
@@ -74,7 +85,29 @@ const Content = styled.div`
           grid-template-columns: 1fr min-content;
           grid-column-gap: 1rem;
           align-items: center;
+          padding-bottom: 1rem;
+          border-bottom: 1px solid #80808038;
+
+          > div.service-title {
+            display: grid;
+            align-items: center;
+            grid-template-columns: min-content 1fr;
+            grid-column-gap: 1rem;
+
+            > .checked {
+              color: #f46445;
+            }
+          }
         }
+      }
+      > button {
+        grid-area: btn;
+        background-color: #f46445;
+        padding: 1rem 0;
+        color: white;
+        outline: none;
+        border: none;
+        font-weight: 700;
       }
     }
   }
@@ -100,8 +133,10 @@ const Content = styled.div`
         display: grid;
         grid-row-gap: 1rem;
       }
-      > button {
+      > .close {
         position: absolute;
+        color: #8080809c;
+        font-size: 2rem;
         right: 10px;
         top: 10px;
       }
@@ -116,7 +151,7 @@ const ServiceOne = ({ text, toogle, hide }) => {
         <div className="text">
           {text ? text.map(item => <p>{item.text}</p>) : null}
         </div>
-        <button onClick={() => toogle(!hide)}>close</button>
+        <FaRegWindowClose className="close" onClick={() => toogle(!hide)} />
       </div>
     </div>
   );
@@ -135,22 +170,26 @@ const PacksSection = ({ color, title, pack }) => {
       <Content>
         <h2>{title}</h2>
         <div className="packs">
-          {pack.map(item => (
-            <div className="pack">
+          {pack.map((item, i) => (
+            <div className="pack" key={`packs${i}`}>
               <div className="text">
                 <h3>{item.title}</h3>
-                <h3>{`$${item.price}`}</h3>
+                <h3 className="price">{`$${item.price}`}</h3>
               </div>
               <div className="services">
-                {item.service.map(service => (
-                  <div className="service">
-                    <h4>{service.title}</h4>
-                    <button onClick={() => handleClick(service.description)}>
-                      click
-                    </button>
+                {item.service.map((service, i) => (
+                  <div className="service" key={`packService${i}`}>
+                    <div className="service-title">
+                      <FaCheck className="checked" />
+                      <p>{service.title}</p>
+                    </div>
+                    <FaQuestionCircle
+                      onClick={() => handleClick(service.description)}
+                    />
                   </div>
                 ))}
               </div>
+              <button>Get Started</button>
             </div>
           ))}
         </div>

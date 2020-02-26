@@ -1,4 +1,5 @@
 import Typography from "typography";
+import { fontSize } from ".";
 
 const typography = new Typography({
   baseFontSize: "18px",
@@ -17,11 +18,22 @@ const typography = new Typography({
   ],
   headerFontFamily: ["Neuton"],
   bodyFontFamily: ["Open Sans"],
-  // overrideStyles: ({ adjustFontSizeTo, rhythm }, options, styles) => ({
-  //   "h1,h2": {
-  //     color: colors.deepDarkGrey,
-  //   },
-  // }),
+  overrideStyles: ({ adjustFontSizeTo, rhythm }, options, styles) => ({
+    "h1,h2": {
+      fontWeight: 400,
+    },
+    h2: {
+      fontSize: fontSize.h1,
+      textAlign: "center",
+    },
+    h3: {
+      fontSize: fontSize.h4,
+      fontWeight: "bold",
+    },
+    h1: {
+      fontFamily: "Open Sans",
+    },
+  }),
 });
 
 export default typography;
