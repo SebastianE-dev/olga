@@ -5,7 +5,7 @@ const Seo = () => {
   return (
     <Helmet>
       <meta name="description" content="A logo design company offer services" />
-      <title>'Olga'</title>
+      <title>Olga</title>
       <html lang="en" />
     </Helmet>
   );
