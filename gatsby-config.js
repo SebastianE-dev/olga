@@ -1,6 +1,14 @@
 module.exports = {
+  siteMetadata: {
+    title: "Olga",
+    description: "A logo design company offer services",
+    develop: "Sebastian E",
+    siteUrl: "https://sebastiane-dev.github.io/olga",
+  },
   pathPrefix: `/olga`,
   plugins: [
+    `gatsby-plugin-react-helmet`,
+
     {
       resolve: `gatsby-plugin-layout`,
       options: {
@@ -47,5 +55,6 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-sitemap`,
   ],
 };

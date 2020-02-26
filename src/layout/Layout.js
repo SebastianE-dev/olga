@@ -2,6 +2,7 @@ import React from "react";
 import { css, Global } from "@emotion/core";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import Seo from "../seo/Seo";
 
 const Layout = ({ children }) => {
   return (
@@ -15,6 +16,7 @@ const Layout = ({ children }) => {
           }
         `}
       />
+      <Seo />
       <NavBar />
       <main>{children}</main>
       <Footer />
